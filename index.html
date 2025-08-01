@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Jardin de l'Amitié - Restaurant à Dakar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for elements that need more styling */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Animation for the call to action */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-amber-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-leaf text-2xl text-amber-300"></i>
+                <a href="#" class="text-2xl font-bold">Le Jardin de l'Amitié</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Desktop menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#accueil" class="hover:text-amber-300 transition">Accueil</a>
+                <a href="#apropos" class="hover:text-amber-300 transition">À propos</a>
+                <a href="#espaces" class="hover:text-amber-300 transition">Nos espaces</a>
+                <a href="#activites" class="hover:text-amber-300 transition">Activités</a>
+                <a href="#evenements" class="hover:text-amber-300 transition">Événements</a>
+                <a href="#galerie" class="hover:text-amber-300 transition">Galerie</a>
+                <a href="#contact" class="hover:text-amber-300 transition">Contact</a>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-green-700 px-4 py-2">
+            <a href="#accueil" class="block py-2 hover:text-amber-300 transition">Accueil</a>
+            <a href="#apropos" class="block py-2 hover:text-amber-300 transition">À propos</a>
+            <a href="#espaces" class="block py-2 hover:text-amber-300 transition">Nos espaces</a>
+            <a href="#activites" class="block py-2 hover:text-amber-300 transition">Activités</a>
+            <a href="#evenements" class="block py-2 hover:text-amber-300 transition">Événements</a>
+            <a href="#galerie" class="block py-2 hover:text-amber-300 transition">Galerie</a>
+            <a href="#contact" class="block py-2 hover:text-amber-300 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section id="accueil" class="hero-banner flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Le Jardin de l'Amitié</h1>
+            <p class="text-xl md:text-2xl mb-8">Un havre de paix et de saveurs au cœur de Dakar</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 pulse-animation">
+                    Réserver une table
+                </a>
+                <a href="#evenements" class="bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                    Voir nos événements
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-800">À propos de nous</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-1/2">
+                    <img src="logo.png" 
+                         alt="Le Jardin de l'Amitié" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4 text-amber-600">Notre histoire</h3>
+                    <p class="mb-4">Intégré depuis 2024 à Nianing, Le Jardin de l'Amitié est bien plus qu'un simple restaurant. C'est un lieu de rencontre, de partage et de découverte culinaire au cœur de Dakar.</p>
+                    <p class="mb-6">Inspiré par les riches traditions sénégalaises et ouvert sur le monde, notre établissement vous propose une expérience gastronomique unique dans un cadre enchanteur.</p>
+                    
+                    <h3 class="text-2xl font-semibold mb-4 text-amber-600">Nos valeurs</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-heart text-amber-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Partage</h4>
+                                <p class="text-sm">Créer des moments de convivialité</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-leaf text-amber-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Authenticité</h4>
+                                <p class="text-sm">Des produits locaux et de saison</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-hands-helping text-amber-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Engagement</h4>
+                                <p class="text-sm">Soutenir les producteurs locaux</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-lightbulb text-amber-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Innovation</h4>
+                                <p class="text-sm">Réinventer la cuisine sénégalaise</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Espaces -->
+    <section id="espaces" class="py-16 bg-amber-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Nos espaces</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Espace 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+                    <img src="men.jpg" 
+                         alt="Jardin extérieur" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-600">Jardin extérieur</h3>
+                        <p class="mb-4">Un cadre verdoyant et ombragé pour déjeuner en plein air.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-600"><i class="fas fa-users mr-1"></i></span>
+                            <a href="#contact" class="text-green-700 hover:text-green-800 font-semibold">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Espace 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+                    <img src="bar.jpg" 
+                         alt="Salle climatisée" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-600">Le Bar</h3>
+                        <p class="mb-4">Espace climatisé et élégant pour vos dîners et événements.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-600"><i class="fas fa-users mr-1"></i></span>
+                            <a href="#contact" class="text-green-700 hover:text-green-800 font-semibold">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Espace 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+                    <img src="podum.jpg" 
+                         alt="Espace séminaire" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-600">Le poduim</h3>
+                        <p class="mb-4">Salle équipée pour vos réunions et formations professionnelles.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-600"><i class="fas fa-users mr-1"></i></span>
+                            <a href="#contact" class="text-green-700 hover:text-green-800 font-semibold">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Activités & Offres -->
+    <section id="activites" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Activités & Offres</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Activité 1 -->
+                <div class="bg-green-50 rounded-lg p-6 border border-green-100">
+                    <div class="text-green-700 text-3xl mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-amber-600">Ateliers culinaires</h3>
+                    <p class="mb-4">Découvrez les secrets de la cuisine sénégalaise avec nos chefs expérimentés.</p>
+                    <a href="#" class="text-green-700 hover:text-green-800 font-semibold">En savoir plus</a>
+                </div>
+                
+                <!-- Activité 2 -->
+                <div class="bg-green-50 rounded-lg p-6 border border-green-100">
+                    <div class="text-green-700 text-3xl mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-amber-600">Soirées thématiques</h3>
+                    <p class="mb-4">Chaque vendredi, une soirée spéciale autour d'une région ou d'une thématique culinaire.</p>
+                    <a href="#" class="text-green-700 hover:text-green-800 font-semibold">En savoir plus</a>
+                </div>
+                
+                <!-- Activité 3 -->
+                <div class="bg-green-50 rounded-lg p-6 border border-green-100">
+                    <div class="text-green-700 text-3xl mb-4">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-amber-600">Formations</h3>
+                    <p class="mb-4">Formations professionnelles en restauration et service pour les jeunes talents.</p>
+                    <a href="#" class="text-green-700 hover:text-green-800 font-semibold">En savoir plus</a>
+                </div>
+                
+                <!-- Activité 4 -->
+                <div class="bg-green-50 rounded-lg p-6 border border-green-100">
+                    <div class="text-green-700 text-3xl mb-4">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-amber-600">Événements privés</h3>
+                    <p class="mb-4">Organisez vos événements (mariages, anniversaires) dans notre cadre exceptionnel.</p>
+                    <a href="#" class="text-green-700 hover:text-green-800 font-semibold">En savoir plus</a>
+                </div>
+            </div>
+            
+            <!-- Offres spéciales -->
+            <div class="bg-amber-100 rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-6 text-center text-green-800">Nos offres spéciales</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Offre 1 -->
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-amber-500 text-xl mb-2">
+                            <i class="fas fa-sun"></i> Déjeuner
+                        </div>
+                        <h4 class="font-bold mb-2">Menu du Jardin</h4>
+                        <p class="mb-3">Entrée + Plat + Dessert + Boisson</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-green-700"></span>
+                            <a href="#contact" class="text-sm bg-green-700 hover:bg-green-800 text-white py-1 px-3 rounded-full">Réserver</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Offre 2 -->
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-amber-500 text-xl mb-2">
+                            <i class="fas fa-moon"></i> Dîner
+                        </div>
+                        <h4 class="font-bold mb-2">Menu de l'Amitié</h4>
+                        <p class="mb-3">2 Entrées + Plat principal + Dessert + Boisson</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-green-700"></span>
+                            <a href="#contact" class="text-sm bg-green-700 hover:bg-green-800 text-white py-1 px-3 rounded-full">Réserver</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Offre 3 -->
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-amber-500 text-xl mb-2">
+                            <i class="fas fa-users"></i> Groupe
+                        </div>
+                        <h4 class="font-bold mb-2">Menu Découverte</h4>
+                        <p class="mb-3">Menu partagé pour 4 personnes + Boissons</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-green-700"></span>
+                            <a href="#contact" class="text-sm bg-green-700 hover:bg-green-800 text-white py-1 px-3 rounded-full">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Événements -->
+    <section id="evenements" class="py-16 bg-green-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nos événements</h2>
+            
+            <!-- Calendar Navigation -->
+            <div class="flex justify-between items-center mb-8">
+                <button class="bg-green-700 hover:bg-green-600 text-white py-2 px-4 rounded">
+                    
+                </button>
+                <h3 class="text-xl font-bold">Juillet 2023</h3>
+                <button class="bg-green-700 hover:bg-green-600 text-white py-2 px-4 rounded">
+                    
+                </button>
+            </div>
+            
+            <!-- Events Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Event 1 -->
+                <div class="bg-green-700 rounded-lg overflow-hidden shadow-lg event-card transition duration-300">
+                    <div class="p-4 bg-green-600">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">15</div>
+                            <div class="text-sm">Juillet</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Soirée spéciale</h3>
+                        <p class="mb-4">Découvrez les variations régionales de ce plat emblématique du Sénégal.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm"><i class="fas fa-clock mr-1"></i> 19h - 23h</span>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="bg-green-700 rounded-lg overflow-hidden shadow-lg event-card transition duration-300">
+                    <div class="p-4 bg-green-600">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">22</div>
+                            <div class="text-sm">Juillet</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Diazz</h3>
+                        <p class="mb-4">Apprenez à préparer les desserts sénégalais traditionnels avec notre chef pâtissier.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm"><i class="fas fa-clock mr-1"></i> 10h - 13h</span>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="bg-green-700 rounded-lg overflow-hidden shadow-lg event-card transition duration-300">
+                    <div class="p-4 bg-green-600">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">29</div>
+                            <div class="text-sm">Juillet</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Concert Acoustique</h3>
+                        <p class="mb-4">Soirée musicale avec des artistes locaux dans notre jardin illuminé.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm"><i class="fas fa-clock mr-1"></i> 20h - Minuit</span>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Web TV Section -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Web TV - Le Jardin de l'Amitié</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Live Stream -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="w-3 h-3 bg-red-500 rounded-full mr-2 animate-pulse"></span>
+                        En direct
+                    </h3>
+                    <div class="video-container bg-black mb-4 rounded-lg overflow-hidden">
+                        <!-- Placeholder for live stream -->
+                        <div class="h-full flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-video text-4xl mb-2 text-gray-600"></i>
+                                <p>Stream en direct non actif pour le moment</p>
+                                <p class="text-sm text-gray-400">Prochain direct: Vendredi 21 Juillet à 19h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold">Soirée Spéciale Cuisine Wolof</p>
+                            <p class="text-sm text-gray-400">Vendredi 21 Juillet - 19h-22h</p>
+                        </div>
+                        <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded flex items-center">
+                            <i class="fas fa-bell mr-2"></i> Rappel
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Replays -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Replays</h3>
+                    <div class="space-y-4">
+                        <!-- Replay 1 -->
+                        <div class="flex bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="w-1/3 bg-gray-700 flex items-center justify-center">
+                                <i class="fas fa-play text-amber-500 text-xl"></i>
+                            </div>
+                            <div class="w-2/3 p-3">
+                                <h4 class="font-bold mb-1">Atelier Cuisine végétarienne</h4>
+                                <p class="text-sm text-gray-400 mb-2">15 Juin 2023</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs text-gray-400"><i class="fas fa-eye mr-1"></i> 1.2K vues</span>
+                                    <button class="text-amber-500 hover:text-amber-400 text-xs">Regarder</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Replay 2 -->
+                        <div class="flex bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="w-1/3 bg-gray-700 flex items-center justify-center">
+                                <i class="fas fa-play text-amber-500 text-xl"></i>
+                            </div>
+                            <div class="w-2/3 p-3">
+                                <h4 class="font-bold mb-1">Table ronde: Agriculture locale</h4>
+                                <p class="text-sm text-gray-400 mb-2">2 Juin 2023</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs text-gray-400"><i class="fas fa-eye mr-1"></i> 856 vues</span>
+                                    <button class="text-amber-500 hover:text-amber-400 text-xs">Regarder</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Replay 3 -->
+                        <div class="flex bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="w-1/3 bg-gray-700 flex items-center justify-center">
+                                <i class="fas fa-play text-amber-500 text-xl"></i>
+                            </div>
+                            <div class="w-2/3 p-3">
+                                <h4 class="font-bold mb-1">Concert de Kora</h4>
+                                <p class="text-sm text-gray-400 mb-2">20 Mai 2023</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs text-gray-400"><i class="fas fa-eye mr-1"></i> 2.4K vues</span>
+                                    <button class="text-amber-500 hover:text-amber-400 text-xs">Regarder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Galerie</h2>
+            
+            <!-- Gallery Navigation -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg bg-green-700 text-white">
+                        Tous
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-white border-t border-b border-gray-200 text-green-700">
+                        Événements
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-white border-t border-b border-gray-200 text-green-700">
+                        Plats
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-white border-t border-b border-gray-200 text-green-700">
+                        Espaces
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg bg-white border border-gray-200 text-green-700">
+                        Équipe
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="IMG-20250724-WA0006.jpg" 
+                         alt="Plat sénégalais" class="w-full h-48 object-cover">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="IMG-20250724-WA0013.jpg" 
+                         alt="Jardin" class="w-full h-48 object-cover">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="IMG-20250724-WA0018.jpg" 
+                         alt="Salle" class="w-full h-48 object-cover">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="IMG-20250724-WA0021.jpg" 
+                         alt="Cuisine" class="w-full h-48 object-cover">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="IMG-20250724-WA0023.jpg" 
+                         alt="Événement" class="w-full h-48 object-cover">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Repas" class="w-full h-48 object-cover">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Séminaire" class="w-full h-48 object-cover">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Équipe" class="w-full h-48 object-cover">
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-amber-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Contactez-nous</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Reservation Form -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h2 class="text-2xl font-bold mb-6 text-green-800">Réservez une table maintenant</h2>
+                        <form id="reservation-form">
+                            <div class="mb-4">
+                                <input type="text" id="nom" placeholder="Nom" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div class="mb-4">
+                                <input type="text" id="prenom" placeholder="Prénom" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div class="mb-4">
+                                <select id="type" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                    <option value="">Type de réservation</option>
+                                    <option value="Petit Déjeuner">Petit Déjeuner</option>
+                                    <option value="Déjeuner">Déjeuner</option>
+                                    <option value="Dîner">Dîner</option>
+                                    <option value="Bar">Bar</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <input type="number" id="nombre" placeholder="Nombre de personnes" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
+                                <i class="fab fa-whatsapp mr-2"></i> Réserver via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ===== Script WhatsApp ===== -->
+  <script>
+    document.getElementById("reservation-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nom = document.getElementById("nom").value.trim();
+      const prenom = document.getElementById("prenom").value.trim();
+      const type = document.getElementById("type").value;
+      const nombre = document.getElementById("nombre").value.trim();
+
+      if (!nom || !prenom || !type || !nombre) {
+        alert("Veuillez remplir tous les champs.");
+        return;
+      }
+
+      const message = `Bonjour, je souhaite réserver une table au nom de ${prenom} ${nom}, pour un ${type}, ${nombre} personne(s).`;
+      const numero = "+221787139595";
+
+      const whatsappURL = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+                
+                <!-- Contact Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-8 h-full">
+                        <h3 class="text-2xl font-bold mb-6 text-green-800">Nos coordonnées</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-green-700 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Adresse</h4>
+                                    <p>Nianing ex chez Alex</p>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-green-700 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Téléphone</h4>
+                                    <p>+221 78 713 95 95</p>
+                                    <p>+221 33 957 16 60</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-green-700 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <p>contact@jardinamitie.sn</p>
+                                    <p>reservation@jardinamitie.sn</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fab fa-whatsapp text-green-700 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">WhatsApp</h4>
+                                    <p>+221 78 713 95 95</p>
+                                    <a href="https://wa.me/+221787139595" class="text-green-700 hover:text-green-800 font-semibold">Envoyer un message</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-green-700 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Horaires</h4>
+                                    <p>Tous les jours à partir de 09h 00mn</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-green-700 hover:bg-green-800 text-white p-3 rounded-full">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-green-700 hover:bg-green-800 text-white p-3 rounded-full">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-green-700 hover:bg-green-800 text-white p-3 rounded-full">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-green-700 hover:bg-green-800 text-white p-3 rounded-full">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Map -->
+    <div class="h-96 bg-gray-200">
+        <iframe
+          src="https://www.google.com/maps?q=14.341167,-16.926417&hl=fr&z=16&output=embed"
+          width="100%"
+          height="250"
+          style="border:0; border-radius: 8px;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Logo and description -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-leaf text-2xl text-amber-300"></i>
+                        <span class="text-xl font-bold">Le Jardin de l'Amitié</span>
+                    </div>
+                    <p class="mb-4">Un lieu unique alliant gastronomie, culture et convivialité au cœur de Dakar.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-300"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg
+</body>
+</html>
