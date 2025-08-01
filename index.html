@@ -728,28 +728,25 @@
                     </div>
                 </div>
                 
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="text-lg
-                        <!-- ... fin de ta page ... -->
+               <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    <script>
-      const menuBtn = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-      menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+    // Ferme le menu après clic sur un lien (optionnel mais conseillé)
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
       });
+    });
+  });
+</script>
 
-      const mobileLinks = mobileMenu.querySelectorAll('a');
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-        });
-      });
-    </script>
-</body>
-</html>
-
+                    
 </body>
 </html>
